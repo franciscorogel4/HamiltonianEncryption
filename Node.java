@@ -1,4 +1,5 @@
-//import some random generator?
+import java.security.SecureRandom;
+import java.util.ArrayList;
 
 public class Node
 {
@@ -6,16 +7,19 @@ public class Node
     private ArrayList<Node> outgoingNodes;
     private int id;
     private int shift;
+	public static SecureRandom randGenerator;
 
     /**
      * Constructor for objects of class Node
      */
     public Node(int newId, boolean isLast)
     {
-        // initialise instance variables
+        // initialize instance variables
         id=newId;
         outgoingNodes=new ArrayList<Node>();
         //shift=random number 0-25
+        randGenerator=new SecureRandom();
+        shift=randGenerator.nextInt(25);
 
         //will add initial edge from main class after next node is created (unless isLast=false)
     }
@@ -25,7 +29,7 @@ public class Node
      * 
      * @param  n   a new Node to connect to
      */
-    public void newEdge(Node n)
+    public void addEdge(Node n)
     {
         // put your code here
         outgoingNodes.add(n);
@@ -40,4 +44,14 @@ public class Node
     public int getId(){
         return id;
     }
+    
+    public String toString() {
+    	String s = "";
+    	s += id+": "+shift;
+    	return s;
+    }
+    
+    /*public int compareTo(Node n){
+    	return this.id-n.id;
+    }*/
 }
