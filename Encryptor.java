@@ -1,11 +1,17 @@
+<<<<<<< HEAD
 import java.security.SecureRandom;
 import java.util.ArrayList;
+=======
+
+import java.security.SecureRandom;
+>>>>>>> d6fa931c09b4af3027920e2c28d4db6708e99088
 import java.util.Random;
 
 public class Encryptor {
 
 	public static void main(String[] args) {
 
+<<<<<<< HEAD
 
 		Random randGenerator = new Random();
 
@@ -22,3 +28,14 @@ public class Encryptor {
 	}
 
 }
+=======
+		Random randGenerator = new Random();
+		
+		for (int i = 0; i < 100; i++){
+			
+		}
+		
+	}
+
+}
+>>>>>>> d6fa931c09b4af3027920e2c28d4db6708e99088
