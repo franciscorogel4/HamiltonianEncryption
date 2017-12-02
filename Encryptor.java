@@ -37,20 +37,19 @@ public class Encryptor {
 		temp = new Node(uniqueRandomId(), true);
 		nodes.add(temp);
 		
+		Collections.sort(nodes);
+		
 		//insecurely save key and randomize order of other array
 		actualOrder=nodes;
-		Collections.sort(nodes,new Comparator<Node>(){
-			@Override public int compare(Node n1, Node n2){
-				//System.out.println(n1+" "+n2);
-				return n1.getId()-n2.getId();
-			}
-		});
-		nodes.sort(Comparator.comparingInt(Node::getId()));
+		
+		
 
 		//NOW DO TESTING/OUTPUT
-		System.out.println(nodes);
-		System.out.println(actualOrder);
-
+		for(Node id: nodes)
+		{
+			System.out.println(id);
+			
+		}
 
 	}
 
