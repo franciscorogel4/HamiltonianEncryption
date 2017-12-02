@@ -23,6 +23,7 @@ public class Encryptor {
 		Node temp = new Node(uniqueRandomId(), false);
 		lastNode=temp;
 		nodes.add(temp);
+		
 
 		for (int i = 0; i < 98; i++){
 			//create new ID and check if it's taken already
@@ -36,20 +37,22 @@ public class Encryptor {
 
 		temp = new Node(uniqueRandomId(), true);
 		nodes.add(temp);
+
+		//insecurely save key for proof of concept and then randomize order of other array
+		//actualOrder=nodes; //doesn't work because java
+		System.out.println(nodes.size());
+		for(int i=0;i<nodes.size();i++){
+			actualOrder.add(nodes.get(i));
+		}
 		
+		//sort nodes to be random
 		Collections.sort(nodes);
-		
-		//insecurely save key and randomize order of other array
-		actualOrder=nodes;
-		
-		
 
 		//NOW DO TESTING/OUTPUT
-		for(Node id: nodes)
-		{
-			System.out.println(id);
-			
-		}
+		
+		System.out.println(nodes);
+		System.out.println(actualOrder);
+		System.out.println(nodes==actualOrder);
 
 	}
 
