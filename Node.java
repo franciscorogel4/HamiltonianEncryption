@@ -1,11 +1,11 @@
 import java.security.SecureRandom;
 import java.util.ArrayList;
 
-public class Node
+public class Node implements Comparable
 {
     // instance variables - replace the example below with your own
     private ArrayList<Node> outgoingNodes;
-    private int id;
+    public int id;
     private int shift;
 	public static SecureRandom randGenerator;
 
@@ -50,6 +50,13 @@ public class Node
     	s += id+": "+shift;
     	return s;
     }
+
+	@Override
+	public int compareTo(Object arg0) {
+		int compareId = ((Node)arg0).getId();
+		return this.id - compareId;
+		
+	}
     
     /*public int compareTo(Node n){
     	return this.id-n.id;
