@@ -45,6 +45,10 @@ public class Node implements Comparable
         return id;
     }
     
+    public int getShift(){
+    	return shift;
+    }
+    
     public String toString() {
     	String s = "";
     	s += id+": "+shift;
