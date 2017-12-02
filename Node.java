@@ -8,7 +8,7 @@ public class Node
     private int shift;
 
     /**
-     * Constructor for objects of class MyClass
+     * Constructor for objects of class Node
      */
     public Node(int newId, boolean isLast)
     {

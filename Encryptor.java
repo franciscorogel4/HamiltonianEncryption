@@ -1,41 +1,51 @@
-<<<<<<< HEAD
 import java.security.SecureRandom;
 import java.util.ArrayList;
-=======
 
 import java.security.SecureRandom;
->>>>>>> d6fa931c09b4af3027920e2c28d4db6708e99088
 import java.util.Random;
 
 public class Encryptor {
 
+	public ArrayList<int> ids;
+	public ArrayList<Node> edges;
+
 	public static void main(String[] args) {
 
-<<<<<<< HEAD
+		ids=new ArrayList<int>();
+		edges=new ArrayList<Node>();
 
-		Random randGenerator = new Random();
-
+		Random randGenerator = new SecureRandom();
 		Node lastNode;
 
-		ArrayList IDs = new ArrayList();
+		Node temp = new Node(uniqueRandomId(), false);
+		lastNode=temp;
+		edges.add(temp);
 
-		for (int i = 0; i < 100; i++){
-			Node temp = new Node(randGenerator.nextInt(10000000), false);
-			lastNode = temp; 
+		for (int i = 0; i < 98; i++){
+			//create new ID and check if it's taken already
+
+			Node temp = new Node(uniqueRandomId(), false);
+			edges.add(temp);
+			lastNode.addEdge(temp);
+			lastNode=temp;
 
 		}
 
+		Node temp = new Node(uniqueRandomId(), true);
+		edges.add(temp);
+
+		//NOW DO TESTING/OUTPUT
+		System.out.println(edges);
+
+
 	}
 
-}
-=======
-		Random randGenerator = new Random();
-		
-		for (int i = 0; i < 100; i++){
-			
+	public int uniqueRandomId(){
+		newId=-1;
+		while(!ids.contains(newId)){
+			newId=randGenerator.nextInt(10000);
 		}
-		
+		return newId;
 	}
 
 }
->>>>>>> d6fa931c09b4af3027920e2c28d4db6708e99088
