@@ -61,6 +61,20 @@ public class Node implements Comparable
 		return this.id - compareId;
 		
 	}
+	
+	//traverse the list of nodes 
+	public Node nextNode(int argID)
+	{
+		
+		for(Node tempNode: outgoingNodes){
+			
+			if(tempNode.getId() == argID)
+			{
+			    return tempNode;
+			}
+		}
+		return new Node(0,false);
+	}
     
     /*public int compareTo(Node n){
     	return this.id-n.id;
