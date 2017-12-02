@@ -19,7 +19,7 @@ public class Node implements Comparable
         outgoingNodes=new ArrayList<Node>();
         //shift=random number 0-25
         randGenerator=new SecureRandom();
-        shift=randGenerator.nextInt(26); //length of accepted alphabet
+        shift=randGenerator.nextInt(26)+1; //length of accepted alphabet
 
         //will add initial edge from main class after next node is created (unless isLast=false)
     }

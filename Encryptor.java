@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-
+import java.util.Scanner;
 public class Encryptor {
 
 	public static ArrayList<Integer> ids;
@@ -14,10 +14,11 @@ public class Encryptor {
 
 	public static void main(String[] args) {
 
+		Scanner scan = new Scanner(System.in);
 		ids=new ArrayList<Integer>();
 		nodes=new ArrayList<Node>();
 		actualOrder=new ArrayList<Node>();
-		String inputString = "aaaaaaaaaaaaaaaaaaaaa"; //Will delete 
+		String inputString = scan.next(); //Will delete 
 		int[] myKey = new int[100];
 		//String inputString = "aaaabbb"; //For testing  
 
@@ -158,7 +159,7 @@ public class Encryptor {
 		//System.out.println(shiftNum);
 		int desiredIndex = (new String(alphabet)).indexOf(tobeShifted)-shiftNum;
 		if(desiredIndex <0)
-		    desiredIndex = 0;
+		    desiredIndex += 26 ;
 
 		return alphabet[desiredIndex]; 
 	}
