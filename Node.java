@@ -1,3 +1,5 @@
+//import some random generator?
+
 public class Node
 {
     // instance variables - replace the example below with your own
@@ -14,6 +16,7 @@ public class Node
         id=newId;
         outgoingNodes=new ArrayList<Node>();
         //shift=random number 0-25
+
         //will add initial edge from main class after next node is created (unless isLast=false)
     }
 
@@ -26,5 +29,15 @@ public class Node
     {
         // put your code here
         outgoingNodes.add(n);
+    }
+
+
+    /**
+     * An example of a method - replace this comment with your own
+     * 
+     * @return id  the ID of this node
+     */
+    public int getId(){
+        return id;
     }
 }
